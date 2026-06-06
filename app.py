@@ -483,7 +483,8 @@ if static_model is not None:
     static_preds_12 = static_model.predict(x_flat) * 100.0
     static_preds_12 = np.clip(static_preds_12, 10.0, 100.0)
 else:
-    static_preds_12 = current_pcis.copy()
+    # Fallback to NumPy array of current PCIs matching node_list indices
+    static_preds_12 = np.array([float(current_pcis[node]) for node in node_list])
 
 # E. Month 24 Prediction (Step 2 Autoregressive)
 x_matrix_gnn_24 = x_matrix.copy()
