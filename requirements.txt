@@ -1,0 +1,12 @@
+numpy
+pandas
+matplotlib
+osmnx
+networkx
+torch
+torch-geometric
+folium
+streamlit
+streamlit-folium
+scikit-learn
+reportlab
